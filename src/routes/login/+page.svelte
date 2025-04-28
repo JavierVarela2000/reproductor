@@ -2,8 +2,8 @@
 	import { goto } from '$app/navigation';
 	import { auth } from '$lib/auth.svelte';
 
-	let username: string = $state('emilys');
-	let password: string = $state('emilyspass');
+	let username: string = $state('emilys'); //
+	let password: string = $state('emilyspass'); //
 
 	async function authenticate() {
 		try {
@@ -37,6 +37,7 @@
 		/>
 	</div>
 	<button
+		name="login_btn"
 		type="button"
 		onclick={authenticate}
 		class="w-full rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"

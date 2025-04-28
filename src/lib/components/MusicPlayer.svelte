@@ -28,9 +28,49 @@
 
 <div
 	class="fixed bottom-0 left-0 flex w-full flex-col items-center bg-gray-800 p-4 text-white shadow-lg"
-	style="height: 80px;"
 >
-	<div class="flex w-full max-w-4xl items-center justify-between">
+	<!-- Contenedor de botones -->
+	<div class="flex items-center justify-center space-x-4">
+		<!-- Botón anterior -->
+		<button
+			onclick={() => player.prev()}
+			class="btn btn-circle bg-gray-700 text-white hover:bg-gray-600"
+		>
+			⏮
+		</button>
+
+		<!-- Botón play/pausa -->
+		{#if player.state.is_playing}
+			<button
+				onclick={() => player.pause()}
+				class="btn btn-circle bg-gray-700 text-white hover:bg-gray-600"
+			>
+				⏸
+			</button>
+		{:else if player.state.is_paused}
+			<button
+				onclick={() => player.play()}
+				class="btn btn-circle bg-gray-700 text-white hover:bg-gray-600"
+			>
+				▶️
+			</button>
+		{:else}
+			<button disabled class="btn btn-circle cursor-not-allowed bg-gray-500 text-white">
+				▶️
+			</button>
+		{/if}
+
+		<!-- Botón siguiente -->
+		<button
+			onclick={() => player.next()}
+			class="btn btn-circle bg-gray-700 text-white hover:bg-gray-600"
+		>
+			⏭
+		</button>
+	</div>
+
+	<!-- Barra de progreso e información -->
+	<div class="mt-4 flex w-full max-w-4xl items-center justify-between">
 		<!-- Información del tiempo actual -->
 		<span class="text-sm">
 			{#if player.current_time}
@@ -39,6 +79,7 @@
 				00:00
 			{/if}
 		</span>
+
 		<!-- Barra de progreso -->
 		{#if player.state.is_playing || player.state.is_paused}
 			<input

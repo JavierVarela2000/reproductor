@@ -10,39 +10,33 @@
 				player.play_track(track);
 				player.current_playlist = selected_playlist;
 			}}
+			class="btn btn-sm btn-primary"
 		>
-			play
+			▶️
 		</button>
 	{:else if player.state.is_playing}
-		<button onclick={() => player.pause()}>pause</button>
+		<button onclick={() => player.pause()} class="btn btn-sm btn-secondary"> ⏸ </button>
 	{:else if player.state.is_paused}
-		<button onclick={() => player.play()}>play</button>
+		<button onclick={() => player.play()} class="btn btn-sm btn-primary"> ▶️ </button>
 	{:else}
-		<button disabled>Play</button>
+		<button disabled class="btn btn-sm btn-disabled"> ▶️ </button>
 	{/if}
 {/snippet}
-<div class="min-h-7 bg-red-200">
+
+<div class="min-h-7 rounded-lg bg-gray-100 p-4 shadow-md">
 	{#if selected_playlist}
-		<ul>
+		<h2 class="mb-4 text-lg font-bold text-gray-800">{selected_playlist.name}</h2>
+		<ul class="space-y-2">
 			{#each selected_playlist.tracks as track}
-				<li>
-					<label for="">
-						{track.title}
-						{@render current_track_play_btn(track)}
-					</label>
+				<li
+					class="flex items-center justify-between rounded-lg bg-white p-2 shadow-sm hover:bg-gray-50"
+				>
+					<span class="text-gray-700">{track.title}</span>
+					{@render current_track_play_btn(track)}
 				</li>
 			{/each}
 		</ul>
-	{/if}
-
-	<button onclick={() => player.prev()}>prev</button>
-	{#if player.state.is_playing}
-		<button onclick={() => player.pause()}>pausa</button>
-	{:else if player.state.is_paused}
-		<button onclick={() => player.play()}>play</button>
 	{:else}
-		<button disabled>Play</button>
+		<p class="text-gray-500">Selecciona una playlist para ver las canciones.</p>
 	{/if}
-
-	<button onclick={() => player.next()}>next</button>
 </div>
