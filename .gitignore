@@ -151,4 +151,3 @@ vite.config.js.timestamp-*
 .test-tmp
 symlink-from
 .idea/
-build/

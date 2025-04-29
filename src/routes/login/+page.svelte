@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { auth } from '$lib/auth.svelte';
+	import { onMount } from 'svelte';
 
 	let username: string = $state('emilys'); //
 	let password: string = $state('emilyspass'); //
@@ -13,6 +14,12 @@
 			console.error('Error al autenticar:', error.message);
 		}
 	}
+
+	onMount(() => {
+		if (auth.isAuthenticated) {
+			goto('/');
+		}
+	});
 </script>
 
 <form class="mt-6 space-y-4">
