@@ -1,0 +1,10 @@
+{
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/login": [
+		"src/routes/login/+page.js",
+		"src/routes/+layout.js"
+	]
+}
