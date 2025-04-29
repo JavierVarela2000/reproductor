@@ -100,11 +100,40 @@
 
 		<!-- Duración total en minutos -->
 		<span class="text-sm">
-			{#if player.current_track && player.current_track.duration}
-				{formatTime(player.current_track.duration)}
+			{#if player.current_track && player.current_time}
+				{formatTime(player.current_track.duration - player.current_time)}
 			{:else}
 				00:00
 			{/if}
 		</span>
 	</div>
+
+	<!-- Información del título y duración -->
+	<div class="mt-2 text-center">
+		{#if player.current_track}
+			<p class="text-sm font-semibold text-gray-200">
+				{player.current_track.title} - {player.current_track.author}
+			</p>
+			<p class="text-sm text-gray-400">
+				Duración: {formatTime(player.current_track.duration)}
+			</p>
+		{:else}
+			<p class="text-sm text-gray-400">Sin información de la pista</p>
+		{/if}
+	</div>
+
+	<!-- Botón para alternar autoplay -->
+	<div class="mt-4 flex items-center space-x-2">
+		<input
+			id="autoplayToggle"
+			type="checkbox"
+			bind:checked={player.is_autoplay}
+			class="toggle toggle-primary"
+		/>
+		<label for="autoplayToggle" class="text-sm text-gray-200">
+			Autoplay: {player.is_autoplay ? 'Activado' : 'Desactivado'}
+		</label>
+	</div>
+	<!-- 
+	{player.audio_player.duration} -->
 </div>

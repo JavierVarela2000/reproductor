@@ -66,6 +66,52 @@ class DB {
 					url: '/mp3/stromae_pomme_ma_meilleure_ennemie.mp3'
 				}
 			]
+		},
+		{
+			id: 3,
+			name: 'Playlist 3',
+			tracks: [
+				{
+					id: 1,
+					author: 'Men At Work',
+					duration: 200.49,
+					performer: 'Men At Work',
+					s3_artkey: 'artkey1',
+					s3_key: 'key1',
+					title: 'Who Can It Be Now',
+					url: '/mp3/who_can_it_be_now.mp3'
+				},
+				{
+					id: 4,
+					author: 'Manu Chao',
+					duration: 240.048,
+					performer: 'Manu Chao',
+					s3_artkey: 'artkey1',
+					s3_key: 'key1',
+					title: 'Me gustas Tu',
+					url: '/mp3/manu_chao-me_gustas_tu.mp3'
+				},
+				{
+					id: 5,
+					author: 'Canserbero',
+					duration: 240.048,
+					performer: 'Canserbero',
+					s3_artkey: 'artkey1',
+					s3_key: 'key1',
+					title: 'Querer Querernos',
+					url: '/mp3/canserbero-querer_querernos.mp3'
+				},
+				{
+					id: 6,
+					author: 'Canserbero',
+					duration: 240.048,
+					performer: 'Canserbero',
+					s3_artkey: 'artkey1',
+					s3_key: 'key1',
+					title: '¿Y La Felicidad Qué?',
+					url: '/mp3/canserbero-y_la_felicidad_que.mp3'
+				}
+			]
 		}
 	];
 

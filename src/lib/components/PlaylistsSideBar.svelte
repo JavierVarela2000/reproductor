@@ -18,7 +18,7 @@
 		</div>
 	</div>
 {/snippet}
-<div class="inline-flex flex-col gap-4">
+<div class="inline-flex w-full flex-col gap-4">
 	{#await db.getAllPlaylists()}
 		loading playlists...
 	{:then playlists}

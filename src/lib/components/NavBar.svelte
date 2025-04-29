@@ -7,13 +7,6 @@
 		<!-- Logo or Title -->
 		<a href="/" class="text-xl font-bold text-white">Reproductor</a>
 
-		<!-- Navigation Links -->
-		<div class="space-x-4">
-			<a href="/" class="text-white hover:text-gray-200">Inicio</a>
-			<a href="/about" class="text-white hover:text-gray-200">Acerca</a>
-			<a href="/contact" class="text-white hover:text-gray-200">Contacto</a>
-		</div>
-
 		<!-- Logout Button -->
 		{#if auth.isAuthenticated}
 			<button

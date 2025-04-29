@@ -23,7 +23,7 @@
 	{/if}
 {/snippet}
 
-<div class="min-h-7 rounded-lg bg-gray-100 p-4 shadow-md">
+<div class="min-h-7 w-full rounded-lg bg-gray-100 p-4 shadow-md">
 	{#if selected_playlist}
 		<h2 class="mb-4 text-lg font-bold text-gray-800">{selected_playlist.name}</h2>
 		<ul class="space-y-2">
@@ -31,7 +31,7 @@
 				<li
 					class="flex items-center justify-between rounded-lg bg-white p-2 shadow-sm hover:bg-gray-50"
 				>
-					<span class="text-gray-700">{track.title}</span>
+					<span class="text-gray-700">{track.title} - {track.author}</span>
 					{@render current_track_play_btn(track)}
 				</li>
 			{/each}
