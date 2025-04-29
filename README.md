@@ -71,10 +71,8 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 ```plaintext
 src/
-├── lib/                # Componentes reutilizables
+├── lib/                # Componentes reutilizables y archivos persistentes
 │   ├── components/     # Componentes principales (NavBar, MusicPlayer, etc.)
-│   ├── styles/         # Estilos globales
-│   └── utils/          # Funciones y utilidades
 ├── routes/             # Rutas de la aplicación
 │   ├── +layout.svelte  # Layout principal
 │   ├── +page.svelte    # Página principal
