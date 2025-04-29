@@ -6,7 +6,7 @@
 	let selected_playlist: Playlist | null = $state(null);
 </script>
 
-<div class="flex">
+<div class=" pb-[220px] lg:flex lg:pb-[190px]">
 	<PlaylistsSideBar
 		onSelectPlaylist={async (playlist: Playlist) => {
 			const tracks = await db.getTracksByPlaylistId(playlist.id);
